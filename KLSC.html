@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m-hm7di - klsc </title>
+    <link rel="stylesheet" href="services.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.5/css/boxicons.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="logo-and-lang">
+            <img src="img/sar.png" alt="m-hm7di" class="logo">
+        </div>
+        <div id="loader">
+          <img src="img/download.gif" alt="Loading...">
+      </div>
+      <script>window.addEventListener('load', () => {
+          const loader = document.getElementById('loader');
+          const content = document.getElementById('content');
+          
+          // تحديد مدة ظهور التمهيد (مثلاً 5 ثوانٍ)
+          setTimeout(() => {
+              loader.style.display = 'none'; // إخفاء التمهيد
+              content.style.display = 'block'; // إظهار المحتوى
+          }, 300); // 5000 ميلي ثانية (5 ثوانٍ)
+      });
+      
+      </script>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="courses.html">الكورسات</a></li>
+                <li><a href="training.html">التدريب العملي</a></li>
+                <li><a href="exams.html">الاختبارات</a></li>
+                <li><a href="documents.html">المستندات</a></li>
+                <li><a href="contact.html" >التواصل والإعلان</a></li>
+                <li><a href="black-section.html">القسم الأسود</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+            <a href="https://discord.com" target="_blank" title="Discord"><i class="bx bxl-discord"></i></a>
+        </div>
+    </header>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #014AAC;
+            color: #f8f8f2;
+            direction: rtl;
+            text-align: right;
+        }
+
+        header {
+            background: #014AAC;
+            text-align: center;
+            padding: 20px;
+            color: #014AAC;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #2d313b;
+            border-radius: 8px;
+        }
+
+        h1, h2, h3 {
+            color: #FFFF;
+        }
+
+        p, li {
+            color: #f8f8f2;
+        }
+
+        pre {
+            background: #44475a;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #f8f8f2;
+        }
+
+        .code-block {
+            position: relative;
+        }
+
+        .code-block button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #282a36;
+            color: #f8f8f2;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #282a36;
+            color: #f8f8f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>التحكم بجلسات الإنترنت</h1>
+    </header>
+    <main>
+        <section>
+            <h2>مقدمة</h2>
+            <p>
+                التحكم بالجلسات هو نوع من الهجمات السيبرانية حيث يقوم المهاجم بسرقة هوية المستخدم 
+                عن طريق الاستيلاء على جلسة (Session) نشطة. يعتمد هذا الهجوم غالبًا على اعتراض بيانات 
+                الجلسة، مثل ملفات تعريف الارتباط (Cookies)، التي تحتوي على رموز تعريف الجلسة 
+                (Session Tokens).
+            </p>
+            <ul>
+                <li><strong>Active Hijacking:</strong> المهاجم يقوم باختطاف الجلسة أثناء استخدامها.</li>
+                <li><strong>Passive Hijacking:</strong> المهاجم يتنصت على البيانات دون تعديلها أو التدخل فيها.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>الأدوات المطلوبة</h2>
+            <ul>
+                <li><strong>Wireshark:</strong> لتحليل الحزم واعتراض البيانات.</li>
+                <li><strong>Bettercap:</strong> لاعتراض البيانات وتنفيذ هجمات MITM (Man-In-The-Middle).</li>
+                <li><strong>Ettercap:</strong> أداة أخرى لتنفيذ هجمات MITM على الشبكات.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>الخطوة 1: التحقق من الاتصال بالشبكة</h2>
+            <div class="code-block">
+                <pre><code>ifconfig
+ip a</code></pre>
+                <button onclick="copyCode(this)">نسخ</button>
+            </div>
+            <p>لاحظ اسم الواجهة المستخدمة (مثل: eth0 أو wlan0).</p>
+        </section>
+
+        <section>
+            <h2>الخطوة 2: تشغيل Bettercap لاعتراض الجلسات</h2>
+            <ol>
+                <li>افتح Terminal وشغل Bettercap باستخدام الواجهة الخاصة بك:</li>
+                <div class="code-block">
+                    <pre><code>sudo bettercap -iface eth0</code></pre>
+                    <button onclick="copyCode(this)">نسخ</button>
+                </div>
+                <li>تفعيل مسح الشبكة لاكتشاف الأجهزة المتصلة:</li>
+                <div class="code-block">
+                    <pre><code>net.probe on</code></pre>
+                    <button onclick="copyCode(this)">نسخ</button>
+                </div>
+                <li>تفعيل هجوم MITM على الشبكة:</li>
+                <div class="code-block">
+                    <pre><code>arp.spoof on</code></pre>
+                    <button onclick="copyCode(this)">نسخ</button>
+                </div>
+                <li>اعتراض الجلسات وتحليلها:</li>
+                <div class="code-block">
+                    <pre><code>http.proxy on</code></pre>
+                    <button onclick="copyCode(this)">نسخ</button>
+                </div>
+                <li>عرض الجلسات الملتقطة:</li>
+                <div class="code-block">
+                    <pre><code>sessions.list</code></pre>
+                    <button onclick="copyCode(this)">نسخ</button>
+                </div>
+            </ol>
+        </section>
+
+        <section>
+            <h2>الخطوة 3: استخدام Wireshark لتحليل الجلسات</h2>
+            <ol>
+                <li>قم بتشغيل Wireshark:</li>
+                <div class="code-block">
+                    <pre><code>sudo wireshark</code></pre>
+                    <button onclick="copyCode(this)">نسخ</button>
+                </div>
+                <li>اختر واجهة الشبكة النشطة (مثل eth0 أو wlan0).</li>
+                <li>استخدم الفلتر التالي لعرض ملفات تعريف الارتباط:</li>
+                <div class="code-block">
+                    <pre><code>http.cookie</code></pre>
+                    <button onclick="copyCode(this)">نسخ</button>
+                </div>
+                <li>ابحث عن رموز الجلسة (Session Tokens) وحلل محتوى الحزم.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>الخطوة 4: حماية الجلسات</h2>
+            <ul>
+                <li><strong>استخدام HTTPS:</strong> تشفير الاتصالات لتقليل خطر اعتراض البيانات.</li>
+                <li><strong>تفعيل Secure وHttpOnly للكوكيز:</strong> لتقليل استغلال الجلسات.</li>
+                <li><strong>استخدام VPN:</strong> لتأمين الاتصال اللاسلكي.</li>
+                <li><strong>تجديد رموز الجلسة بشكل منتظم:</strong> لمنع استغلال الرموز القديمة.</li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = "تم النسخ!";
+                setTimeout(() => button.textContent = "نسخ", 2000);
+            });
+        }
+    </script>
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="social-footer">
+            <h3>حساباتي في السوشال ميديا</h3>
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+                <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+                <a href="https://discord.com" target="_blank" title="Discord"><i class="bx bxl-discord"></i></a>
+            </div>
+            <p class="copyright-text">جميع الحقوق تخص m-hm7di ولا يسمح باخذها</p>
+        </div>
+        <div class="footer-column">
+            <h3>روابط سريعة</h3>
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="about.html">عنّي</a></li>
+                <li><a href="documents.html">المستندات</a></li>
+                <li><a href="courses.html">الكورسات</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>عن m-hm7di </h3>
+            <p>ننطلق برؤية ملهمة لنشر المعرفة، وإطلاق إمكانات الوطن العربي نحو التميز</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; جميع الحقوق محفوظة لدى m-hm7di 2025</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية - m-hm7di</title>
+    <link rel="stylesheet" href="blak.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.5/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <button id="menu-button" class="menu-button">
+            <i class="bx bx-menu"></i>
+        </button>
+
+        <div class="logo-and-lang">
+            <img src="img/sar.png" alt="m-hm7di" class="logo">
+        </div>
+        <div id="loader">
+            <img src="img/download.gif" alt="Loading...">
+        </div>
+        <script> window.addEventListener('load', () => { const loader = document.getElementById('loader'); const content = document.getElementById('content'); setTimeout(() => { loader.style.display = 'none'; content.style.display = 'block'; }, 800); });
+        </script>
+        <nav class="navbar top-nav">
+            <ul>
+                <li><a href="home.html" class="active">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="courses.html">الكورسات</a></li>
+                <li><a href="training.html">التدريب العملي</a></li>
+                <li><a href="exams.html">الاختبارات</a></li>
+                <li><a href="documents.html">المستندات</a></li>
+                <li><a href="contact.html">التواصل والإعلان</a></li>
+                <li><a href="black-section.html">القسم الأسود</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+            <a href="https://discord.com" target="_blank" title="Discord"><i class="bx bxl-discord"></i></a>
+        </div>
+<nav id="sidebar" class="sidebar">
+    <button id="close-button" class="close-button">
+        <i class="bx bx-x"></i>
+    </button>
+    <ul>
+        <li><a href="home.html">الرئيسية</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="courses.html">الكورسات</a></li>
+        <li><a href="training.html">التدريب العملي</a></li>
+        <li><a href="exams.html">الاختبارات</a></li>
+        <li><a href="documents.html">المستندات</a></li>
+        <li><a href="contact.html">التواصل والإعلان</a></li>
+        <li><a href="black-section.html">القسم الأسود</a></li>
+    </ul>
+    <div class="sidebar-social-icons">
+        <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+    </div>
+</nav>
+    </header>
+    <div class="slider-container">
+        <div class="slide">
+          <img src="img/ابداء مجان.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+          <img src="img/تعلم مع مع m-hm7di.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+          <img src="img/تعلم الامن السيبراني.jpg" alt="Image 3">
+        </div>    
+        <div class="dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+      <script> let slideIndex = 0; showSlides(); function showSlides() {  let slides = document.getElementsByClassName("slide"); let dots = document.getElementsByClassName("dot"); for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none";  } for (let i = 0; i < dots.length; i++) {dots[i].className = dots[i].className.replace(" active", ""); }  slideIndex++; if (slideIndex > slides.length) {slideIndex = 1; } slides[slideIndex - 1].style.display = "block"; dots[slideIndex - 1].className += " active";setTimeout(showSlides, 5000);} function currentSlide(n) {slideIndex = n - 1; showSlides();}</script>
+    
+    <main class="content">
+        <section class="hero">
+            <h1>مرحبًا بك في m-hm7di !</h1>
+            <p>هنا نقدم لك أفضل الكورسات والخدمات التي تساعدك في تطوير مهاراتك الشخصية والمهنية.</p>
+            <a href="courses.html" class="btn btn-primary">ابداء الان </a>
+        </section>
+
+        <section class="features">
+            <h2>خدماتنا</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <h3>دورات تدريبية</h3>
+                    <p>تعلم مهارات جديدة في البرمجة، التصميم، التسويق، والمزيد عبر قناتي في اليوتيوب.</p>
+                    <a href="#" class="btn">ابدأ الآن</a>
+                </div>
+                <div class="feature-card">
+                    <h3>خدمات استشارية</h3>
+                    <p>نساعدك في تطوير أعمالك وحل مشاكلك التقنية والإدارية.</p>
+                    <a href="Consulting services.html" class="btn">تواصل معنا</a>
+                </div>
+                <div class="feature-card">
+                    <h3>التدريب العملي</h3>
+                    <p>فرص تدريب عملية لمساعدتك في تطبيق المهارات التي تعلمتها.</p>
+                    <a href="training.html" class="btn">سجل الآن</a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="social-footer">
+                    <h3>حساباتي في السوشال ميديا</h3>
+                    <div class="social-icons">
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+                        <a href="https://discord.com" target="_blank" title="Discord"><i class="bx bxl-discord"></i></a>
+                    </div>
+                    <p class="copyright-text">جميع الحقوق تخص m-hm7di ولا يسمح بأخذها</p>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="home.html">الرئيسية</a></li>
+                        <li><a href="about.html">عنّي</a></li>
+                        <li><a href="documents.html">المستندات</a></li>
+                        <li><a href="courses.html">الكورسات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>عن m-hm7di</h3>
+                    <p>ننطلق برؤية ملهمة لنشر المعرفة، وإطلاق إمكانات الوطن العربي نحو التميز.</p>
+                </div>
+            </div>
+            <div class="copyright">
+            <p>&copy; جميع الحقوق محفوظة لدى m-hm7di 2025</p>
+            </div>
+        </footer>
+         
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الاشتراك - m-hm7di</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header class="header">
+        <!-- رأس الصفحة -->
+    </header>
+
+    <main class="content">
+        <section class="register-section">
+            <h1>تسجيل البيانات الشخصية</h1>
+            <form action="submit_form.php" method="POST">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الجوال</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_number">رقم الهوية</label>
+                    <input type="text" id="id_number" name="id_number" required>
+                </div>
+                <div class="form-group">
+                    <label for="birth_date">تاريخ الميلاد</label>
+                    <input type="date" id="birth_date" name="birth_date" required>
+                </div>
+                <button type="submit" class="submit-button">إرسال</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- محتوى التذييل -->
+    </footer>
+</body>
+</html>

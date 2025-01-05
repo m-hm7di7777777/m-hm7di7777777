@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الخدمات</title>
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blak.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    
+</head>
+<body>
+    <header class="header">
+        <div class="logo-and-lang">
+            <img src="img/sar.png" alt="m-hm7di" class="logo">
+        </div>
+        <div id="loader">
+          <img src="img/download.gif" alt="Loading...">
+      </div>
+      <script>
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            const content = document.getElementById('content');
+    
+            setTimeout(() => {
+                if (loader) loader.style.display = 'none'; // إخفاء شاشة التمهيد
+                if (content) content.style.display = 'block'; // عرض محتوى الصفحة
+            }, 800); // مدة التأخير 800 مللي ثانية
+        });
+    </script>
+    
+      <nav class="navbar top-nav">
+        <ul>
+            <li><a href="home.html">الرئيسية</a></li>
+            <li><a href="services.html"class="active">الخدمات</a></li>
+            <li><a href="courses.html">الكورسات</a></li>
+            <li><a href="training.html">التدريب العملي</a></li>
+            <li><a href="exams.html">الاختبارات</a></li>
+            <li><a href="documents.html">المستندات</a></li>
+            <li><a href="contact.html">التواصل والإعلان</a></li>
+            <li><a href="black-section.html">القسم الأسود</a></li>
+        </ul>
+    </nav>
+    <div class="social-icons">
+        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+        <a href="https://discord.com" target="_blank" title="Discord"><i class="bx bxl-discord"></i></a>
+    </div>
+    <nav id="sidebar" class="sidebar">
+      <button id="close-button" class="close-button">
+          <i class="bx bx-x"></i>
+      </button>
+      <ul>
+          <li><a href="home.html">الرئيسية</a></li>
+          <li><a href="services.html">الخدمات</a></li>
+          <li><a href="courses.html">الكورسات</a></li>
+          <li><a href="training.html">التدريب العملي</a></li>
+          <li><a href="exams.html">الاختبارات</a></li>
+          <li><a href="documents.html">المستندات</a></li>
+          <li><a href="contact.html">التواصل والإعلان</a></li>
+          <li><a href="black-section.html">القسم الأسود</a></li>
+      </ul>
+      <div class="sidebar-social-icons">
+          <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+          <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+      </div>
+  </nav>
+  <script> document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('menu-button');
+
+    function toggleMenuButton() {
+        if (window.innerWidth >= 769) {
+            menuButton.style.display = 'none';
+        } else {
+            menuButton.style.display = 'block';
+        }
+    }
+
+    // تحديث عند تغيير حجم النافذة
+    window.addEventListener('resize', toggleMenuButton);
+
+    // تحديث عند تحميل الصفحة
+    toggleMenuButton();
+});
+</script>
+ 
+
+</nav>
+</header>
+    <div class="image-container">
+      <img src="img/الخدمة المدفوعة.jpg" alt="الخدمة" />
+      <div class="centered-text2">
+        الخدمة المدفوعة
+    </div>
+      <div class="centered-text">
+          لدى m-hm7di فريق خبير معين لكل مجال معين في الأمن السيبراني
+      </div>
+  </div>
+   <div class="col-md-4">
+      <div class="service left-icon probootstrap-animate">
+       <div class="icon">
+                    <img src="img/wallet2.svg" alt="404" class="moving-image" />
+                </div>
+                <div class="text">
+                  <h3 class="heading">السعر</h3>
+                  <p>السعر يعتمد على الوقت المحدد من قبل الطالب </p>
+                  <p>30 minute = 10 $</p>
+                  <p>60 minute = 20 $</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="service left-icon probootstrap-animate">
+    
+                <div class="icon">
+                    <img src="img/hourglass.svg" alt="404" class="moving-image" />
+                </div>
+                <div class="text">
+                  <h3 class="heading">الموعد</h3>
+                  <p>بعد اتمام الدفع يتم تحديد موعد متفق عليه من قبل الخبير والطالب</p>
+                  <p>وفي حال تم الغياب عن الموعد يبقى لديك فرصة اخرى مجانيه</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="service left-icon probootstrap-animate">
+                <div class="icon">
+                    <img src="img/shield.svg" alt="404" class="moving-image" />
+                </div>
+                <div class="text">
+                  <h3 class="heading">السرية</h3>
+                  <p>يمنع منع بات تصوير الجلسة او محاولة استغلالها بالشراكة مع طلاب اخرين او نشر معلومة </p>
+                  <p>وفي حال تم ضبط الطالب بمخالفة  احدى القوانين يتم الغاء الجلسة فورا</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="service left-icon probootstrap-animate">
+                <div class="icon">
+                    <img src="img/card-heading.svg" alt="404" class="moving-image" />
+                </div>
+                <div class="text">
+                  <h3 class="heading">الحدود</h3>
+                  <p>يجب على الطالب طرح اسئلة قانونية وعدم التطرق لمواضيع حساسة تعود لاشخاص او لجهات حكوميه</p>
+                </div></div></section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const services = document.querySelectorAll(".service");
+  
+          window.addEventListener("scroll", () => {
+              services.forEach((service) => {
+                  const servicePosition = service.getBoundingClientRect().top;
+                  const screenHeight = window.innerHeight;
+  
+                  if (servicePosition < screenHeight - 100) {
+                      service.classList.add("fade-in");
+                  }
+              });
+          });
+      });
+  </script>
+ <footer class="footer">
+  <div class="footer-container">
+      <div class="social-footer">
+          <h3>حساباتي في السوشال ميديا</h3>
+          <div class="social-icons">
+              <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+              <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+              <a href="https://discord.com" target="_blank" title="Discord"><i class="bx bxl-discord"></i></a>
+          </div>
+          <p class="copyright-text">جميع الحقوق تخص m-hm7di ولا يسمح بأخذها</p>
+      </div>
+      <div class="footer-column">
+          <h3>روابط سريعة</h3>
+          <ul>
+              <li><a href="home.html">الرئيسية</a></li>
+              <li><a href="about.html">عنّي</a></li>
+              <li><a href="documents.html">المستندات</a></li>
+              <li><a href="courses.html">الكورسات</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>عن m-hm7di</h3>
+          <p>ننطلق برؤية ملهمة لنشر المعرفة، وإطلاق إمكانات الوطن العربي نحو التميز.</p>
+      </div>
+  </div>
+  <div class="copyright">
+  <p>&copy; جميع الحقوق محفوظة لدى m-hm7di 2025</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

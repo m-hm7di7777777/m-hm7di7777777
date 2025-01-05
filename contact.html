@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التواصل والإعلان - m-hm7di</title>
+    <link rel="stylesheet" href="blak.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.5/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-and-lang">
+            <img src="img/sar.png" alt="m-hm7di" class="logo">
+        </div>
+        <div id="loader">
+            <img src="img/download.gif" alt="Loading...">
+        </div>
+        <script>window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            const content = document.getElementById('content');
+            
+            // تحديد مدة ظهور التمهيد (مثلاً 5 ثوانٍ)
+            setTimeout(() => {
+                loader.style.display = 'none'; // إخفاء التمهيد
+                content.style.display = 'block'; // إظهار المحتوى
+            }, 800); // 5000 ميلي ثانية (5 ثوانٍ)
+        });
+        
+        </script>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="courses.html">الكورسات</a></li>
+                <li><a href="training.html">التدريب العملي</a></li>
+                <li><a href="exams.html">الاختبارات</a></li>
+                <li><a href="documents.html">المستندات</a></li>
+                <li><a href="contact.html" class="active">التواصل والإعلان</a></li>
+                <li><a href="black-section.html">القسم الأسود</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+            <a href="https://discord.com" target="_blank" title="Discord"><i class="bx bxl-discord"></i></a>
+        </div>
+    </header>
+    <main class="content">
+        <section class="contact-form-section">
+            <h1>نموذج التواصل والإعلان</h1>
+            <p>املأ النموذج أدناه للتواصل معنا.</p>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">الاسم:</label>
+                    <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">الرسالة:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="أدخل رسالتك" required></textarea>
+                </div>
+                <button type="submit" class="btn">إرسال</button>
+            </form>
+        </section>
+    </main>
+<script>document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const token = "7586399671:AAGJzfHRI_DSkqcZ5Ku7H26rKhOL8KFKHlg";
+    const chatId = "5594532298";
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+    const userAgent = navigator.userAgent;
+    const browserName = getBrowserName();
+    const os = getOS();
+    const device = getDeviceType();
+    let text = `🚀 رسالة جديدة من موقعك:\n\n👤 الاسم: ${name}\n📧 البريد الإلكتروني: ${email}\n✉️ الرسالة: ${message}\n\n📊 معلومات إضافية:\n📱 نوع الجهاز: ${device}\n🌐 نظام التشغيل: ${os}\n🖥️ المتصفح: ${browserName}\n📏 حجم الشاشة: ${screenWidth}x${screenHeight}\n🛠️ معلومات المتصفح: ${userAgent}`;
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            text += `\n📍 الموقع الجغرافي:\nخط العرض: ${latitude}\nخط الطول: ${longitude}`;
+            sendToTelegram(token, chatId, text);
+        }, function () {
+            sendToTelegram(token, chatId, text);
+        });
+    } else {
+        sendToTelegram(token, chatId, text);
+    }
+});
+function sendToTelegram(token, chatId, text) {
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: text,
+        }),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("تم إرسال الرسالة بنجاح!");
+            document.getElementById("contactForm").reset();
+        } else {
+            alert("حدث خطأ أثناء الإرسال. حاول مرة أخرى!");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("حدث خطأ أثناء الإرسال. حاول مرة أخرى!");
+    });
+}
+function getBrowserName() {
+    const userAgent = navigator.userAgent;
+    if (userAgent.includes("Chrome")) return "Google Chrome";
+    if (userAgent.includes("Firefox")) return "Mozilla Firefox";
+    if (userAgent.includes("Safari") && !userAgent.includes("Chrome")) return "Apple Safari";
+    if (userAgent.includes("Edge")) return "Microsoft Edge";
+    if (userAgent.includes("Opera") || userAgent.includes("OPR")) return "Opera";
+    return "متصفح غير معروف";
+}
+function getOS() {
+    const platform = navigator.platform.toLowerCase();
+    if (platform.includes("win")) return "Windows";
+    if (platform.includes("mac")) return "MacOS";
+    if (platform.includes("linux")) return "Linux";
+    if (platform.includes("android")) return "Android";
+    if (platform.includes("iPhone") || platform.includes("ipad")) return "iOS";
+    return "نظام غير معروف";
+}
+function getDeviceType() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.includes("mobile")) return "هاتف محمول";
+    if (userAgent.includes("tablet")) return "جهاز لوحي";
+    return "جهاز كمبيوتر";
+}
+</script>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="social-footer">
+            <h3>حساباتي في السوشال ميديا</h3>
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" title="YouTube"><i class="bx bxl-youtube"></i></a>
+                <a href="https://twitter.com" target="_blank" title="Twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://snapchat.com" target="_blank" title="Snapchat"><i class="bx bxl-snapchat"></i></a>
+                <a href="https://discord.com" target="_blank" title="Discord"><i class="bx bxl-discord"></i></a>
+            </div>
+            <p class="copyright-text">جميع الحقوق تخص m-hm7di ولا يسمح باخذها</p>
+        </div>
+        <div class="footer-column">
+            <h3>روابط سريعة</h3>
+            <ul>
+                <li><a href="home.html">الرئيسية</a></li>
+                <li><a href="about.html">عنّي</a></li>
+                <li><a href="documents.html">المستندات</a></li>
+                <li><a href="courses.html">الكورسات</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>عن m-hm7di </h3>
+            <p>ننطلق برؤية ملهمة لنشر المعرفة، وإطلاق إمكانات الوطن العربي نحو التميز</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; جميع الحقوق محفوظة لدى m-hm7di 2025</p>
+    </div>
+</footer>
+</body>
+</html>

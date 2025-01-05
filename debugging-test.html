@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>نظام الاختبارات</h1>
+        </header>
+
+        <section class="exam-info">
+            <div class="info">
+                <p>اسم الطالب: <span>محمد أحمد</span></p>
+                <p>المدة الزمنية: 
+                    <span id="hours">00</span>:<span id="minutes">15</span>:<span id="seconds">00</span>
+                </p>
+                <p>عدد الأسئلة: <span id="total-questions">5</span></p>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <form id="quiz-form">
+                <div id="questions-container"></div>
+                <button type="submit" class="submit-btn">إرسال الإجابات</button>
+            </form>
+        </section>
+
+        <!-- مربع الرسالة مع النتيجة -->
+        <div id="result-popup" class="popup">
+            <div class="popup-content">
+                <p id="popup-message">تمت الإجابة</p>
+                <div id="score-circle" class="score-circle">
+                    <span id="score-text">0%</span>
+                </div>
+                <div class="popup-buttons">
+                    <button id="exit-btn" class="exit-btn">خروج</button>
+                    <button id="done-btn" class="done-btn">تم</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 جميع الحقوق محفوظة</p>
+        </footer>
+    </div>
+    <script src="QuizLogic.js"></script>
+    <script src="QuizLogic1.js"></script>
+</body>
+</html>

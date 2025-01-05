@@ -1,0 +1,464 @@
+/* إعدادات عامة */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* رأس الصفحة */
+.header {
+    background-color: #014AAC;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-and-lang {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover {
+    background-color: #fff;
+    color: #014AAC;
+    border-radius: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+/* المحتوى */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-section {
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: 32px;
+}
+
+.hero-section p {
+    font-size: 18px;
+}
+
+.exams {
+    margin-top: 20px;
+}
+
+.exam-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.exam-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.exam-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.exam-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-exam {
+    background-color: #014AAC;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-exam:hover {
+    background-color: #0069d9;
+}
+
+/* التذييل */
+.footer {
+    background-color: #014AAC;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+.social-footer {
+    text-align: center; /* يجعل النص (أيقونات السوشيال ميديا) في المنتصف */
+}
+
+.social-icons {
+    display: inline-flex; /* يجعل الأيقونات تظهر بشكل أفقي */
+    justify-content: center; /* يركز الأيقونات في المنتصف */
+    gap: 15px; /* يضيف فراغ بين الأيقونات */
+}
+.navbar a.active {
+    background-color: white;
+    color: #014AAC;
+    font-weight: bold;
+}
+.navbar a {
+    FONT-WEIGHT: 500;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.social-footer a {
+    color: #fff;
+    margin: 0 5px;
+    font-size: 20px;
+}
+
+.social-footer a:hover {
+    color: #ffcc00;
+}
+
+/* تنسيق الأيقونات في الشريط العلوي */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.social-icons i {
+    font-size: 25px;
+}
+/* التذييل */
+.footer {
+    background-color: #014aac;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.footer {
+    background-color: #014AAC;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+/* التذييل */
+.footer {
+    background-color: #014AAC;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+/* إعدادات عامة */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #000000;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+ورقة أنماط وكيل المستخدم
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+.footer {
+    background-color: #014aac;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.footer {
+    background-color: #014AAC;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+.footer {
+    background-color: #014AAC;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #000000;
+}
+.footer {
+    background-color: #014aac;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.footer {
+    background-color: #014AAC;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+.footer {
+    background-color: #014AAC;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+    
+}
+.footer-container {
+    /* display: flex
+; */
+    justify-content: space-between;
+    padding: 30px 50px;
+    background-color: #014AAC;
+    color: white;
+}
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+.footer-container {
+    display: flex
+;
+    justify-content: space-between;
+    padding: 30px 50px;
+    background-color: #014AAC;
+    color: white;
+}
+/* تنسيق أيقونات السوشال ميديا في التذييل */
+.footer .social-icons {
+    display: flex;
+    justify-content: center; /* وضع الأيقونات في المنتصف */
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.footer .social-icons a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px; /* حجم الأيقونات */
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #ffcc00; /* تغيير اللون عند التمرير */
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+    background-color: #014AAC;
+    color: white;
+}
+.footer-container {
+    display: flex
+    
+;
+    justify-content: space-between;
+    padding: 30px 50px;
+    background-color: #014AAC;
+    color: white;
+    display: flex
+
+}
+.footer-container {
+    display: flex
+;
+    justify-content: space-between;
+    padding: 30px 50px;
+    background-color: #014AAC;
+    color: white;
+}
+.footer {
+    background-color: #014AAC;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+}
+/* تنسيق أيقونات السوشال ميديا في التذييل */
+.footer .social-icons {
+    display: flex;
+    justify-content: center; /* وضع الأيقونات في المنتصف */
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.footer .social-icons a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px; /* حجم الأيقونات */
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #ffcc00; /* تغيير اللون عند التمرير */
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+    background-color: #014AAC;
+    color: white;
+}
+
+.social-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.social-footer .social-icons a {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-footer .social-icons a:hover {
+    color: #ffcc00;
+}
+
+.social-footer .copyright-text {
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    color: #ffcc00;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+    background-color: #014AAC;
+    color: white;
+}
+.footer-container {
+    display: flex
+;
+    justify-content: space-between;
+    padding: 30px 50px;
+    background-color: #014AAC;
+    color: white;
+}
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#content {
+    display: none; /* إخفاء المحتوى عند تحميل الصفحة */
+}

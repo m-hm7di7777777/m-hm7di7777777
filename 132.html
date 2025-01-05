@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات الجهاز باستخدام IP</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASPzVO-oVmQJZlVzMthihY10Ihdn-AaU8&callback=initMap" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #e74c3c;
+        }
+        .data-block {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+        .data-block div {
+            flex: 1;
+            padding: 10px;
+        }
+        .data-block div h3 {
+            color: #ecf0f1;
+        }
+        .data-block div p {
+            color: #bdc3c7;
+        }
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>معلومات الجهاز باستخدام IP</h1>
+        <input type="text" id="ipInput" placeholder="أدخل عنوان IP هنا" style="width: 100%; padding: 10px; margin-bottom: 20px;">
+        <button class="btn" onclick="getDeviceInfo()">عرض البيانات</button>
+
+        <div id="infoContainer" style="display: none;">
+            <div class="data-block">
+                <div>
+                    <h3>عنوان IP</h3>
+                    <p id="ipAddress">-</p>
+                </div>
+                <div>
+                    <h3>الموقع الجغرافي</h3>
+                    <p id="location">-</p>
+                </div>
+            </div>
+            <div class="data-block">
+                <div>
+                    <h3>مدينة</h3>
+                    <p id="city">-</p>
+                </div>
+                <div>
+                    <h3>الدولة</h3>
+                    <p id="country">-</p>
+                </div>
+            </div>
+            <div class="data-block">
+                <div>
+                    <h3>الرمز البريدي</h3>
+                    <p id="postalCode">-</p>
+                </div>
+                <div>
+                    <h3>الإحداثيات</h3>
+                    <p id="coordinates">-</p>
+                </div>
+            </div>
+            <div class="data-block">
+                <div>
+                    <h3>مزود خدمة الإنترنت (ISP)</h3>
+                    <p id="isp">-</p>
+                </div>
+                <div>
+                    <h3>اسم المجال</h3>
+                    <p id="hostname">-</p>
+                </div>
+            </div>
+            <div class="data-block">
+                <div>
+                    <h3>نوع الاتصال</h3>
+                    <p id="connectionType">-</p>
+                </div>
+            </div>
+            <div class="data-block">
+                <div>
+                    <h3>اسم الشركة</h3>
+                    <p id="organization">-</p>
+                </div>
+            </div>
+
+            <div class="data-block">
+                <div>
+                    <h3>نظام التشغيل</h3>
+                    <p id="os">-</p>
+                </div>
+                <div>
+                    <h3>نوع الجهاز</h3>
+                    <p id="device">-</p>
+                </div>
+            </div>
+
+            <div class="map-container" id="map"></div>
+        </div>
+    </div>
+
+    <script>
+        function getDeviceInfo() {
+            const ip = document.getElementById('ipInput').value;
+
+            if (ip) {
+                // استرجاع البيانات الجغرافية عبر IP
+                fetch(`https://ipinfo.io/${ip}/json`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // عرض المعلومات الجغرافية
+                        document.getElementById('ipAddress').innerText = data.ip || '-';
+                        document.getElementById('city').innerText = data.city || '-';
+                        document.getElementById('country').innerText = data.country || '-';
+                        document.getElementById('postalCode').innerText = data.postal || '-';
+                        document.getElementById('coordinates').innerText = data.loc || '-';
+                        document.getElementById('isp').innerText = data.org || '-';
+                        document.getElementById('hostname').innerText = data.hostname || '-';
+                        document.getElementById('organization').innerText = data.org || '-' ;
+
+                        // جلب معلومات الاتصال - Wi-Fi أو بيانات الجوال
+                        const connectionType = navigator.connection ? navigator.connection.effectiveType : "غير معروف";
+                        document.getElementById('connectionType').innerText = connectionType;
+
+                        // عرض الخريطة
+                        const location = data.loc.split(',');
+                        initMap(parseFloat(location[0]), parseFloat(location[1]));
+
+                        // جلب معلومات الجهاز (نظام التشغيل ونوع الجهاز)
+                        const userAgent = navigator.userAgent;
+                        let os = 'غير معروف';
+                        let device = 'غير معروف';
+
+                        // تحديد نظام التشغيل
+                        if (/Windows NT/i.test(userAgent)) {
+                            os = "Windows";
+                        } else if (/Macintosh/i.test(userAgent)) {
+                            os = "Mac OS";
+                        } else if (/Linux/i.test(userAgent)) {
+                            os = "Linux";
+                        } else if (/Android/i.test(userAgent)) {
+                            os = "Android";
+                        } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+                            os = "iOS";
+                        }
+
+                        // تحديد نوع الجهاز
+                        if (/iPhone/i.test(userAgent)) {
+                            device = "iPhone";
+                        } else if (/Samsung/i.test(userAgent)) {
+                            device = "Samsung";
+                        } else if (/Oppo/i.test(userAgent)) {
+                            device = "Oppo";
+                        } else if (/Huawei/i.test(userAgent)) {
+                            device = "Huawei";
+                        } else if (/Android/i.test(userAgent)) {
+                            device = "Android Phone";
+                        }
+
+                        document.getElementById('os').innerText = os;
+                        document.getElementById('device').innerText = device;
+
+                        // إظهار القسم المخبأ
+                        document.getElementById('infoContainer').style.display = 'block';
+                    })
+                    .catch(error => {
+                        alert('حدث خطأ. يرجى المحاولة مرة أخرى.');
+                    });
+            } else {
+                alert('يرجى إدخال عنوان IP');
+            }
+        }
+
+        // إظهار الخريطة
+        function initMap(lat, lon) {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: lat, lng: lon },
+                zoom: 8
+            });
+
+            new google.maps.Marker({
+                position: { lat: lat, lng: lon },
+                map: map
+            });
+        }
+    </script>
+
+</body>
+</html>
